@@ -1989,7 +1989,7 @@ class BookingRepository extends BaseRepository
     public function bookingExpireNoAccepted()
     {
         $languages = Language::where('active', '1')->orderBy('language')->get();
-        $requestdata = Request::all();
+        $requestdata = request()->all();
         $all_customers = DB::table('users')->where('user_type', '1')->lists('email');
         $all_translators = DB::table('users')->where('user_type', '2')->lists('email');
 
